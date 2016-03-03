@@ -42,7 +42,7 @@ estimateIdeology2 <- function(user, friends, verbose=TRUE){
   y <- matrix((tweetscores::refdataCA$id %in% friends)*1, nrow=1)
   # info message
   if (sum(y)==0){
-    stop("User follows 0 elites!")
+    return ("BAD")
   }
   message(user, " follows ", sum(y), " elites: ",
       paste(tweetscores::refdataCA$colname[
